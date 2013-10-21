@@ -24,3 +24,11 @@ export LANG="en_US"
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
+
+export PYTHONPATH=/usr/local/django_appengine/lib:$PYTHONPATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export CLICOLOR=1
+#export LSCOLORS=GxFxCxDxBxegedabagaced
+alias pyc='find . -name "*.pyc" -exec rm -rf {} \;'
