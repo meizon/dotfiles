@@ -31,5 +31,3 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Sites
 source /usr/local/bin/virtualenvwrapper.sh
 export CLICOLOR=1
-#export LSCOLORS=GxFxCxDxBxegedabagaced
-alias pyc='find . -name "*.pyc" -exec rm -rf {} \;'
