@@ -25,12 +25,25 @@ export LANG="en_US"
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# Get Pip to cache downloaded packages
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+
+# Some virtualenv settings
+export PIP_RESPECT_VIRTUALENV=true
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PROJECT_HOME=~/Sites
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 export PYTHONPATH=/usr/local/django_appengine/lib:$PYTHONPATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/Sites
-source /usr/local/bin/virtualenvwrapper.sh
 export CLICOLOR=1
 #export LSCOLORS=GxFxCxDxBxegedabagaced
 alias pyc='find . -name "*.pyc" -exec rm -rf {} \;'
 alias webserver='python -m SimpleHTTPServer'
+alias pgserver='postgres -D /usr/local/var/postgres'
+alias mysqlserver='mysql.server start'
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
